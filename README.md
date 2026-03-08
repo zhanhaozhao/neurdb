@@ -89,18 +89,20 @@ See NeurDB in action:
 
 NeurDB consists of three main components:
 
-![NeurDB arch](assets/neurdb-v0.5-arch.jpg)
+![NeurDB arch](assets/neurdb-v1-arch.jpg)
 
-1. **DBEngine**: An enhanced version of PostgreSQL 16.3, extended with AI-native execution and optimization capabilities.
-	-	*NeurQO* – A learned query optimizer that continuously adapts to workload changes through cost-estimation learning and reinforcement feedback.
-	-	*DBEngine* Core – Implements a unified execution graph that integrates traditional query operators (e.g., scan, join, projection) and AI operators (e.g., embedding, matrix multiplication).
-	-	*NeurCC* – A learned concurrency control module that dynamically tunes locking and scheduling strategies under varying workload patterns.
+1.	**AI Layer (NeurIDA)**: This layer manages AI models and analytics tasks inside the database. It provides mechanisms for model selection, model slicing, and model construction, enabling efficient deployment and adaptation of machine learning models for AI analytics workloads.
 
-2. **AI Engine**: An integrated in-database machine learning framework for model training, inference, and online adaptation.
-	-	*Task Manager* – Manages AI analytics tasks (e.g., fine-tuning, retraining) as database-native jobs.
-	- *Runtime* – Provides unified execution over heterogeneous hardware (CPU/GPU) with efficient memory and I/O management.
+2. **Database Engine Layer (NeurEngine)**: Built on top of an enhanced PostgreSQL engine, this layer integrates learned optimization and execution mechanisms.
+	- *NeurQO* – A learned query optimizer that performs fast-adaptive query optimization through query-state abstraction and workload feedback.
+	- *NeurEngine Core* – Implements the planner, optimizer, and executor, and supports unified execution graph construction and CPU–GPU co-scheduling to execute both traditional database operators and AI operators.
+	- *NeurCC* – A learned concurrency control module that dynamically adapts concurrency strategies under changing workload patterns.
 
-3. **Storage Layer**: A dual-format storage system supporting both key–value (RocksDB), heap storage, and	model storage (NeurStore).
+3.	**Adaptive Data Access Components**:
+	- *NeurIndex* – A general learned index framework with DRL-based index adaptation for dynamic workloads.
+	- *NeurCache* – A workload-aware caching framework that jointly manages model weights, features, and data through a unified cache structure.
+
+4. **Storage Layer**: A dual-format storage system supporting both key–value (RocksDB), heap storage, and model storage (*NeurStore*).
 
 
 ### Development Setup
@@ -127,7 +129,20 @@ NeurDB is backed by rigorous academic research. Our work has been published in t
 3. **NeurStore: Efficient In-database Deep Learning Model Management System**
    *SIGMOD 2026*
 
+4. **Modeling Concurrency Control as a Learnable Function**
+   *SIGMOD 2026*
 
+5. **On Self-Designing Learned Indexes**
+   *SIGMOD 2026*
+
+6. **NL2SQLBench: A Modular Benchmarking Framework for LLM-Enabled NL2SQL Solutions**
+   *VLDB 2026*
+
+7. **NeurBench: A Benchmark Suite for Learned Database Components with Drift Modeling**
+   *SIGMOD 2026*
+
+8. **CoShap: A Scalable Coalition Growth Approach to Shapley Value Approximation**
+   *SIGMOD 2026*
 
 
 ### Citation
