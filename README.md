@@ -11,7 +11,7 @@
 
 ## Overview
 
-**NeurDB** is a cutting-edge AI-powered autonomous database system that revolutionizes how organizations manage, query, and interact with their data. NeurDB seamlessly integrates artificial intelligence capabilities directly into the database layer, enabling intelligent data processing and autonomous optimization.
+**NeurDB** is a cutting-edge AI-powered autonomous database system that revolutionizes how organizations manage, query, and interact with their data. NeurDB seamlessly integrates artificial intelligence capabilities directly into the database layer, in all major components, enabling intelligent data processing and autonomous optimization.
 
 ### Why NeurDB?
 
