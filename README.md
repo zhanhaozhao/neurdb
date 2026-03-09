@@ -126,22 +126,28 @@ NeurDB is backed by rigorous academic research. Our work has been published in t
 2. **NeurDB: On the Design and Implementation of an AI-powered Autonomous Database** [[PDF]](https://vldb.org/cidrdb/papers/2025/p29-zhao.pdf)
    *CIDR 2025*
 
-3. **NeurStore: Efficient In-database Deep Learning Model Management System**
+3. **Database Native Model Selection: Harnessing Deep Neural Networks in Database Systems** [[PDF]] (https://www.vldb.org/pvldb/vol17/p1020-xing.pdf)
+   *VLDB 2024*
+
+4. **Powering In-Database Dynamic Model Slicing for Structured Data Analytics** [[PDF]] (https://www.vldb.org/pvldb/vol17/p4813-zeng.pdf)
+   *VLDB, 2025*
+
+5.  **NeurStore: Efficient In-database Deep Learning Model Management System**
    *SIGMOD 2026*
 
-4. **Modeling Concurrency Control as a Learnable Function**
+6. **Modeling Concurrency Control as a Learnable Function**
    *SIGMOD 2026*
 
-5. **On Self-Designing Learned Indexes**
+7. **On Self-Designing Learned Indexes**
    *SIGMOD 2026*
 
-6. **NL2SQLBench: A Modular Benchmarking Framework for LLM-Enabled NL2SQL Solutions**
+8. **NL2SQLBench: A Modular Benchmarking Framework for LLM-Enabled NL2SQL Solutions**
    *VLDB 2026*
 
-7. **NeurBench: A Benchmark Suite for Learned Database Components with Drift Modeling**
+9.  **NeurBench: A Benchmark Suite for Learned Database Components with Drift Modeling**
    *SIGMOD 2026*
 
-8. **CoShap: A Scalable Coalition Growth Approach to Shapley Value Approximation**
+10. **CoShap: A Scalable Coalition Growth Approach to Shapley Value Approximation**
    *SIGMOD 2026*
 
 
