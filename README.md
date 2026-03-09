@@ -118,7 +118,7 @@ NeurDB also includes benchmarking frameworks for evaluating AI-powered database 
 1. **Tools and Utilities**
 NeurDB provides additional system tools to support model interpretation and system analysis.
 
-   - *CoShap* – A scalable method for Shapley value approximation to support model interpretation and feature contribution analysis.
+   - *CoShap (SIGMOD 2026)* – A scalable method for Shapley value approximation to support model interpretation and feature contribution analysis.
 
 <!-- ### Development Setup
 
