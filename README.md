@@ -91,26 +91,41 @@ NeurDB consists of three main components:
 
 ![NeurDB arch](assets/neurdb-v1-arch.jpg)
 
-1.	**AI Layer (NeurIDA)**: This layer manages AI models and analytics tasks inside the database. It provides mechanisms for model selection, model slicing, and model construction, enabling efficient deployment and adaptation of machine learning models for AI analytics workloads.
+1.	**AI Layer (NeurIDA)**: This layer manages AI models and analytics tasks inside the database and supports the lifecycle of in-database machine learning models.
+    - *Model Selection (VLDB 2024)* – Automatically ranks and selects suitable models for database tasks.
+    - *Model Slicing (VLDB 2025)* – Decomposes large models into smaller slices to enable efficient execution and deployment.
+    - *Model Construction* – Supports the composition and integration of multiple models for AI analytics and transactional workloads.
 
-2. **Database Engine Layer (NeurEngine)**: Built on top of an enhanced PostgreSQL engine, this layer integrates learned optimization and execution mechanisms.
-	- *NeurQO* – A learned query optimizer that performs fast-adaptive query optimization through query-state abstraction and workload feedback.
-	- *NeurEngine Core* – Implements the planner, optimizer, and executor, and supports unified execution graph construction and CPU–GPU co-scheduling to execute both traditional database operators and AI operators.
-	- *NeurCC* – A learned concurrency control module that dynamically adapts concurrency strategies under changing workload patterns.
 
-3.	**Adaptive Data Access Components**:
-	- *NeurIndex* – A general learned index framework with DRL-based index adaptation for dynamic workloads.
+2. **Database Engine Layer**: Built on top of an enhanced PostgreSQL engine, this layer integrates learned optimization, learned concurrency control, and runtime adaptive execution.
+   - *NeurQO* – A learned query optimizer that performs fast-adaptive query optimization through query-state abstraction and workload feedback.
+   - *NeurEngine* – Implements the planner, optimizer, and executor, and supports unified execution graph construction and CPU–GPU co-scheduling to execute both traditional database operators and AI operators.
+   - *NeurCC (SIGMOD 2026)* – A learned concurrency control framework that models concurrency control as a learnable function and dynamically adapts to workload changes.
+
+3.	**Adaptive Data Access Components**: NeurDB incorporates adaptive data access modules that improve indexing and caching performance under dynamic workloads.
+	- *NeurIndex* – A general learned index framework for adaptive index design and optimization under dynamic workloads, with *Selix (SIGMOD 2026)* as one implementation that enables DRL-based index adaptation.
 	- *NeurCache* – A workload-aware caching framework that jointly manages model weights, features, and data through a unified cache structure.
 
 4. **Storage Layer**: A dual-format storage system supporting both key–value (RocksDB), heap storage, and model storage (*NeurStore*).
+   - *NeurStore* – Provides efficient storage and management for deep learning models.
 
+5. **Benchmarking and Evaluation**
+NeurDB also includes benchmarking frameworks for evaluating AI-powered database systems and learned components.
 
-### Development Setup
+   - *NeurBench (SIGMOD 2026)* – A unified benchmark for evaluating learned database components under data and workload drift.
+   - *NL2SQLBench (VLDB 2026)* – A modular benchmark for evaluating LLM-enabled NL2SQL systems.
+
+1. **Tools and Utilities**
+NeurDB provides additional system tools to support model interpretation and system analysis.
+
+   - *CoShap* – A scalable method for Shapley value approximation to support model interpretation and feature contribution analysis.
+
+<!-- ### Development Setup
 
 For contributors looking to develop NeurDB:
 
 - [DBEngine Development Guide](./doc/db_dev.md)
-- [AIEngine Development Guide](./doc/ai_dev.md)
+- [AIEngine Development Guide](./doc/ai_dev.md) -->
 
 
 
@@ -126,10 +141,10 @@ NeurDB is backed by rigorous academic research. Our work has been published in t
 2. **NeurDB: On the Design and Implementation of an AI-powered Autonomous Database** [[PDF]](https://vldb.org/cidrdb/papers/2025/p29-zhao.pdf)
    *CIDR 2025*
 
-3. **Database Native Model Selection: Harnessing Deep Neural Networks in Database Systems** [[PDF]] (https://www.vldb.org/pvldb/vol17/p1020-xing.pdf)
+3. **Database Native Model Selection: Harnessing Deep Neural Networks in Database Systems** [[PDF]](https://www.vldb.org/pvldb/vol17/p1020-xing.pdf)
    *VLDB 2024*
 
-4. **Powering In-Database Dynamic Model Slicing for Structured Data Analytics** [[PDF]] (https://www.vldb.org/pvldb/vol17/p4813-zeng.pdf)
+4. **Powering In-Database Dynamic Model Slicing for Structured Data Analytics** [[PDF]](https://www.vldb.org/pvldb/vol17/p4813-zeng.pdf)
    *VLDB, 2025*
 
 5.  **NeurStore: Efficient In-database Deep Learning Model Management System**
